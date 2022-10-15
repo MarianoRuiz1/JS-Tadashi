@@ -56,5 +56,5 @@ comics.push(new Comics(4, "Capitana Marvel Vol 01: La Heroína Más Poderosa De 
 comics.push(new Comics (5, "Green Arrow Vol 01: Hunters Moon", 4200 , "DC Comics" ));
 
 
-let opcion = prompt("Hola ¿Cual es tu nombre?: ")
+let opcion = prompt("Hola ¿Que deseas comprar? \n1-All Star Batman Vol 01: Yo, Mi Peor Enemigo\n2-All Star Superman Absolute.\n3-Astonishing opcion-Men Vol 10: Northstar TPB.\n4-Capitana Marvel Vol 01: La Heroína Más Poderosa De La Tierra.\n5-Green Arrow Vol 01: Hunters Moon")
 console.log(elegirComic(opcion));
