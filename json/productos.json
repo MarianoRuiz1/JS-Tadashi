@@ -1,0 +1,109 @@
+[{
+    "id": 1,
+    "tipo": "Comic",
+    "nombre": "Los Cuatro Fantasticos 06 Imperio",
+    "precio": 2500,
+    "foto": "./media/c1.jpeg"
+}, {
+    "id": 2,
+    "tipo": "Comic",
+    "nombre": "Camino a Imperio 01",
+    "precio": 2100,
+    "foto": "./media/c2.jpeg"
+}, {
+    "id": 3,
+    "tipo": "Comic",
+    "nombre": "Avengers 06 La Llegada del Fenix",
+    "precio": 2100,
+    "foto": "./media/c3.jpeg"
+}, {
+    "id": 4,
+    "tipo": "Comic",
+    "nombre": "X-Men 12 Amanecer X Parte 08",
+    "precio": 1900,
+    "foto": "./media/c4.jpeg"
+}, {
+    "id": 5,
+    "tipo": "Comic",
+    "nombre": "Sandman Vol. 10 El Velatorio",
+    "precio": 3900,
+    "foto": "./media/c5.jpeg"
+}, {
+    "id": 6,
+    "tipo": "Comic",
+    "nombre": "Sandman Vol. 04 Estacion De Nieblas",
+    "precio": 3650,
+    "foto": "./media/c6.jpeg"
+}, {
+    "id": 7,
+    "tipo": "Manga",
+    "nombre": "Hanako Kun 04",
+    "precio": 1100,
+    "foto": "./media/m1.jpeg"
+}, {
+    "id": 8,
+    "tipo": "Manga",
+    "nombre": "Yu Gi Oh 09",
+    "precio": 1100,
+    "foto": "./media/m2.jpeg"
+}, {
+    "id": 9,
+    "tipo": "Manga",
+    "nombre": "Bakemonogatari 12",
+    "precio": 1100,
+    "foto": "./media/m3.jpeg"
+}, {
+    "id": 10,
+    "tipo": "Manga",
+    "nombre": "Banana Fish 04",
+    "precio": 1900,
+    "foto": "./media/m4.jpeg"
+}, {
+    "id": 11,
+    "tipo": "Libro",
+    "nombre": "Heartstopper 03",
+    "precio": 2500,
+    "foto": "./media/l1.jpeg"
+}, {
+    "id": 12,
+    "tipo": "Libro",
+    "nombre": "Dune 01 (Bolsillo)",
+    "precio": 4349,
+    "foto": "./media/l2.jpeg"
+}, {
+    "id": 13,
+    "tipo": "Libro",
+    "nombre": "Dune 02 El Mesias de Dune (Bolsillo)",
+    "precio": 3449,
+    "foto": "./media/l3.jpeg"
+}, {
+    "id": 14,
+    "tipo": "Libro",
+    "nombre": "Dune 03 Hijos de Dune (Bolsillo)",
+    "precio": 3999,
+    "foto": "./media/l4.jpeg"
+}, {
+    "id": 15,
+    "tipo": "Libro",
+    "nombre": "Dune 04 Dios Emperador de Dune (Bolsillo)",
+    "precio": 4000,
+    "foto": "./media/l5.jpeg"
+}, {
+    "id": 16,
+    "tipo": "Libro",
+    "nombre": "Wolfsong La Cancion Del Lobo",
+    "precio": 3700,
+    "foto": "./media/l6.jpeg"
+}, {
+    "id": 17,
+    "tipo": "Libro",
+    "nombre": "El Visitante (Bolsillo)",
+    "precio": 4449,
+    "foto": "./media/l7.jpeg"
+}, {
+    "id": 18,
+    "tipo": "Libro",
+    "nombre": "El Resplandor (Bolsillo)",
+    "precio": 5349,
+    "foto": "./media/l8.jpeg"
+}]
