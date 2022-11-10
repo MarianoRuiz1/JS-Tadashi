@@ -8,29 +8,6 @@ let cantidadTotalCompra = carrito.length;
 //dentro del document ready agrego todo el codigo generado por dom
 $(document).ready(function () {
   $("#cantidad-compra").text(cantidadTotalCompra);
-  //evento al boton finalizar compra para que el usuario confirme su compra
-  $("#btn-finalizar").on('click', function () {
-    //uso sweet alert para que el usuario confirme su compra, cuando toca si se vacia el carrito
-    Swal.fire({
-      title: '¿Seguro que queres finalizar tu compra?',
-      text: `Total a abonar: $${calcularTotalCarrito()}`,
-      showCancelButton: true,
-      confirmButtonColor: '#008f39',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si',
-      cancelButtonText: 'No'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Compra confirmada',
-          '¡Que lo disfrutes!',
-          'success'
-        )
-        vaciarCarrito();
-      }
-    })
-  });
-
   //configuracion del selector para ordenar productos
   $("#seleccion option[value='pordefecto']").attr("selected", true);
   $("#seleccion").on("change", ordenarProductos);
@@ -40,6 +17,19 @@ $(document).ready(function () {
   obtenerJSON();
   renderizarProductos();
   mostrarEnTabla();
+
+  //evento para que figure una alerta si el carrito esta vacio
+  $("#btn-continuar").on('click', function (e) {
+    if (carrito.length == 0){
+      e.preventDefault();
+      Swal.fire({
+        icon: 'error',
+        title: 'No hay ningun item en tu carrito',
+        text: 'Agrega algun producto para continuar',
+        confirmButtonColor: "#444444"
+      })
+    }
+  });
 });
 
 //funcion para el renderizado de los productos en cards
@@ -58,14 +48,13 @@ function renderizarProductos() {
 
     $(`#btn${producto.id}`).on('click', function () {
       agregarAlCarrito(producto);
-      $(`#btn${producto.id}`).fadeOut(200).fadeIn(200);
     });
   }
 };
 
 //funcion utilizando AJAX para obtener la informacion de los productos creados en el archivo json
 function obtenerJSON() {
-  $.getJSON("./json/productos.json", function (respuesta, estado) {
+  $.getJSON("../json/productos.json", function (respuesta, estado) {
     if (estado == "success") {
       productosJSON = respuesta;
       renderizarProductos();
@@ -111,11 +100,12 @@ function agregarAlCarrito(productoAgregado) {
   if (encontrado == undefined) {
     let productoEnCarrito = new ProductoCarrito(productoAgregado);
     carrito.push(productoEnCarrito);
-    Swal.fire(
-      'Nuevo producto agregado al carrito',
-      productoAgregado.nombre,
-      'success'
-    );
+    Swal.fire({
+      icon: 'success',
+      title: 'Nuevo producto agregado al carrito',
+      text: productoAgregado.nombre,
+      confirmButtonColor: "#444444"
+    });
 
     //agregamos una nueva fila a la tabla de carrito en caso de que el producto no se encontrara 
     $("#tablabody").append(`<tr id='fila${productoEnCarrito.id}' class='tabla-carrito'>
@@ -126,7 +116,7 @@ function agregarAlCarrito(productoAgregado) {
                             </tr>`);
 
   } else {
-    //pido al carro la posicion del producto y despues incremento su cantidad
+    //pido al carrito la posicion del producto y despues incremento su cantidad
     let posicion = carrito.findIndex(p => p.id == productoAgregado.id);
     carrito[posicion].cantidad += 1;
     $(`#${productoAgregado.id}`).html(carrito[posicion].cantidad);
@@ -168,15 +158,6 @@ function calcularTotalCarrito() {
   $("#montoTotalCompra").text(total);
   $("#cantidad-compra").text(carrito.length);
   return total;
-}
-
-//funcion que resetea todos los valores una vez finalizada la compra 
-function vaciarCarrito() {
-  $("#gastoTotal").text("Total: $0");
-  $("#cantidad-compra").text("0");
-  $(".tabla-carrito").remove();
-  localStorage.clear();
-  carrito = [];
 }
 
 //funcion para traer el carrito cargado cada vez que se refresca la pagina
