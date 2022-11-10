@@ -1,3 +1,3 @@
 # proyecto-js
 
-Proyecto final del curso de JavaScript de Coder House - 2022
+Proyecto final del curso de JavaScript de Coderhouse - 2022
